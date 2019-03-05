@@ -54,7 +54,7 @@ public class SimpleCalculatorTest extends ControllerTestBase {
     @Test
     public void testMultiply() throws Throwable {
         // Parameters for the API call
-        OperationType operation = OperationType.fromString("MULTIPLY");
+        OperationType operation = null;
         double x = 4d;
         double y = 5d;
 

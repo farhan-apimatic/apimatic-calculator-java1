@@ -81,11 +81,11 @@ public class SimpleCalculator extends BaseController {
                     String _baseUri = Configuration.baseUri;
 
                     //prepare query string for API call
-                    StringBuilder _queryBuilder = new StringBuilder("/{operation}");
+                    StringBuilder _queryBuilder = new StringBuilder("/{Operation}");
 
                     //process template parameters
                     Map<String, Object> _templateParameters = new HashMap<String, Object>();
-                    _templateParameters.put("operation", (operation != null) ? operation.value() : null);
+                    _templateParameters.put("Operation", (operation != null) ? operation.value() : null);
                     APIHelper.appendUrlWithTemplateParameters(_queryBuilder, _templateParameters);
 
                     ///process query parameters
