@@ -22,7 +22,7 @@ angular.module('APIMATICCalculatorLib')
              *
              * @return {promise<Precision>}
              */
-            calculate: function (operation, x, y) {
+            newEndpointItIs: function (operation, x, y) {
 
                 //Create promise to return
                 var _deffered = $q.defer();
