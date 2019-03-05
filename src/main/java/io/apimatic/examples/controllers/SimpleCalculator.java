@@ -47,13 +47,13 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the Double response from the API call 
      */
-    public Double newEndpointItIs(
+    public Double buildViaJenkins1(
                 final OperationType operation,
                 final double x,
                 final double y
     ) throws Throwable {
         APICallBackCatcher<Double> callback = new APICallBackCatcher<Double>();
-        newEndpointItIsAsync(operation, x, y, callback);
+        buildViaJenkins1Async(operation, x, y, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -66,7 +66,7 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the void response from the API call 
      */
-    public void newEndpointItIsAsync(
+    public void buildViaJenkins1Async(
                 final OperationType operation,
                 final double x,
                 final double y,

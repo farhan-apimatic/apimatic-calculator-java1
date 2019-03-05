@@ -62,7 +62,7 @@ public class SimpleCalculatorTest extends ControllerTestBase {
         double result = 0;
         controller.setHttpCallBack(httpResponse);
         try {
-            result = controller.newEndpointItIs(operation, x, y);
+            result = controller.buildViaJenkins1(operation, x, y);
         } catch(APIException e) {};
 
        // Test whether the response is null

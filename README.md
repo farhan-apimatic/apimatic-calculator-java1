@@ -121,13 +121,13 @@ The singleton instance of the ``` SimpleCalculator ``` class can be accessed fro
 SimpleCalculator simpleCalculator = client.getSimpleCalculator();
 ```
 
-### <a name="new_endpoint_it_is_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.SimpleCalculator.newEndpointItIsAsync") newEndpointItIsAsync
+### <a name="build_via_jenkins1_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.SimpleCalculator.buildViaJenkins1Async") buildViaJenkins1Async
 
 > Calculates the expression using the specified operation.
 
 
 ```java
-void newEndpointItIsAsync(
+void buildViaJenkins1Async(
         final OperationType operation,
         final double x,
         final double y,
@@ -150,7 +150,7 @@ OperationType operation = OperationType.fromString("MULTIPLY");
 double x = 4;
 double y = 5;
 // Invoking the API call with sample inputs
-simpleCalculator.newEndpointItIsAsync(operation, x, y, new APICallBack<Double>() {
+simpleCalculator.buildViaJenkins1Async(operation, x, y, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }
