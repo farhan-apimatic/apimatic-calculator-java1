@@ -47,13 +47,13 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the Double response from the API call 
      */
-    public Double calculate(
+    public Double calculate123(
                 final OperationType operation,
                 final double x,
                 final double y
     ) throws Throwable {
         APICallBackCatcher<Double> callback = new APICallBackCatcher<Double>();
-        calculateAsync(operation, x, y, callback);
+        calculate123Async(operation, x, y, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -66,7 +66,7 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the void response from the API call 
      */
-    public void calculateAsync(
+    public void calculate123Async(
                 final OperationType operation,
                 final double x,
                 final double y,
