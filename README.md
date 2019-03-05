@@ -110,7 +110,6 @@ APIMATICCalculatorClient client = new APIMATICCalculatorClient(gfdsfkl, dsfsdf, 
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [SimpleCalculator](#simple_calculator)
-* [API](#api)
 
 ## <a name="simple_calculator"></a>![Class: ](https://apidocs.io/img/class.png "io.apimatic.examples.controllers.SimpleCalculator") SimpleCalculator
 
@@ -160,66 +159,6 @@ simpleCalculator.calculateAsync(operation, x, y, new APICallBack<Double>() {
     }
 });
 
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api"></a>![Class: ](https://apidocs.io/img/class.png "io.apimatic.examples.controllers.API") API
-
-### Get singleton instance
-
-The singleton instance of the ``` API ``` class can be accessed from the API Client.
-
-```java
-API client = client.getClient();
-```
-
-### <a name="new_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.API.newAsync") newAsync
-
-> TODO: Add a method description
-
-
-```java
-void newAsync(
-        final NewRequest body,
-        final String cacheControl,
-        final String contentType,
-        final String postmanToken,
-        final APICallBack<DynamicResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    NewRequest body = new NewRequest();
-    String cacheControl = "cache-control";
-    String contentType = "content-type";
-    String postmanToken = "postman-token";
-    // Invoking the API call with sample inputs
-    client.newAsync(body, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
-        public void onSuccess(HttpContext context, DynamicResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
 ```
 
 
