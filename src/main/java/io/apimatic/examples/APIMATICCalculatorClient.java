@@ -18,14 +18,6 @@ public class APIMATICCalculatorClient {
     }
 
     /**
-     * Singleton access to Client controller
-     * @return	Returns the API instance 
-     */
-    public API getClient() {
-        return API.getInstance();
-    }
-
-    /**
      * Get the shared http client currently being used for API calls
      * @return The http client instance currently being used
      */
