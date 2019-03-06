@@ -47,13 +47,13 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the Double response from the API call 
      */
-    public Double buildViaJenkins1(
+    public Double newEndpointItIs(
                 final OperationType operation,
                 final double x,
                 final double y
     ) throws Throwable {
         APICallBackCatcher<Double> callback = new APICallBackCatcher<Double>();
-        buildViaJenkins1Async(operation, x, y, callback);
+        newEndpointItIsAsync(operation, x, y, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -66,7 +66,7 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the void response from the API call 
      */
-    public void buildViaJenkins1Async(
+    public void newEndpointItIsAsync(
                 final OperationType operation,
                 final double x,
                 final double y,
@@ -81,11 +81,11 @@ public class SimpleCalculator extends BaseController {
                     String _baseUri = Configuration.baseUri;
 
                     //prepare query string for API call
-                    StringBuilder _queryBuilder = new StringBuilder("/{Operation}");
+                    StringBuilder _queryBuilder = new StringBuilder("/{operation}");
 
                     //process template parameters
                     Map<String, Object> _templateParameters = new HashMap<String, Object>();
-                    _templateParameters.put("Operation", (operation != null) ? operation.value() : null);
+                    _templateParameters.put("operation", (operation != null) ? operation.value() : null);
                     APIHelper.appendUrlWithTemplateParameters(_queryBuilder, _templateParameters);
 
                     ///process query parameters
