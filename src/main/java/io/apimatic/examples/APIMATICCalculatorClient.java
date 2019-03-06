@@ -37,17 +37,6 @@ public class APIMATICCalculatorClient {
      * Default constructor 
      */     
     public APIMATICCalculatorClient() {
-        Configuration.dsfsdf = "ds";
     }
 
-    /**
-     * Client initialization constructor 
-     */     
-    public APIMATICCalculatorClient(String gfdsfkl, String dsfsdf, String basicAuthUserName, String basicAuthPassword) {
-        this();
-        Configuration.gfdsfkl = gfdsfkl;
-        if(dsfsdf != null) Configuration.dsfsdf = dsfsdf;
-        Configuration.basicAuthUserName = basicAuthUserName;
-        Configuration.basicAuthPassword = basicAuthPassword;
-    }
 }

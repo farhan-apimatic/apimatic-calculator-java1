@@ -80,28 +80,13 @@ In Eclipse, for running the tests do the following:
 
 ## Initialization
 
-### Authentication
-In order to setup authentication and initialization of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| gfdsfkl | sd |
-| dsfsdf | TODO: add a description |
-| basicAuthUserName | The username to use with basic authentication |
-| basicAuthPassword | The password to use with basic authentication |
-
-
+### 
 
 API client can be initialized as following.
 
 ```java
-// Configuration parameters and credentials
-String gfdsfkl = "gfdsfkl"; // sd
-String dsfsdf = "ds";
-String basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
-String basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
 
-APIMATICCalculatorClient client = new APIMATICCalculatorClient(gfdsfkl, dsfsdf, basicAuthUserName, basicAuthPassword);
+APIMATICCalculatorClient client = new APIMATICCalculatorClient();
 ```
 
 
@@ -121,13 +106,13 @@ The singleton instance of the ``` SimpleCalculator ``` class can be accessed fro
 SimpleCalculator simpleCalculator = client.getSimpleCalculator();
 ```
 
-### <a name="new_endpoint_it_is_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.SimpleCalculator.newEndpointItIsAsync") newEndpointItIsAsync
+### <a name="calculate_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.SimpleCalculator.calculateAsync") calculateAsync
 
 > Calculates the expression using the specified operation.
 
 
 ```java
-void newEndpointItIsAsync(
+void calculateAsync(
         final OperationType operation,
         final double x,
         final double y,
@@ -150,7 +135,7 @@ OperationType operation = OperationType.fromString("MULTIPLY");
 double x = 4;
 double y = 5;
 // Invoking the API call with sample inputs
-simpleCalculator.newEndpointItIsAsync(operation, x, y, new APICallBack<Double>() {
+simpleCalculator.calculateAsync(operation, x, y, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }

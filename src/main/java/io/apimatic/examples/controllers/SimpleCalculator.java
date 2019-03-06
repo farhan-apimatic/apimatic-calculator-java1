@@ -47,13 +47,13 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the Double response from the API call 
      */
-    public Double newEndpointItIs(
+    public Double calculate(
                 final OperationType operation,
                 final double x,
                 final double y
     ) throws Throwable {
         APICallBackCatcher<Double> callback = new APICallBackCatcher<Double>();
-        newEndpointItIsAsync(operation, x, y, callback);
+        calculateAsync(operation, x, y, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -66,7 +66,7 @@ public class SimpleCalculator extends BaseController {
      * @param    y    Required parameter: The RHS value
      * @return    Returns the void response from the API call 
      */
-    public void newEndpointItIsAsync(
+    public void calculateAsync(
                 final OperationType operation,
                 final double x,
                 final double y,
@@ -99,15 +99,11 @@ public class SimpleCalculator extends BaseController {
 
                     //load all headers for the outgoing API request
                     Map<String, String> _headers = new HashMap<String, String>();
-                    _headers.put("gfdsfkl", Configuration.gfdsfkl);
-                    _headers.put("dsfsdf", Configuration.dsfsdf);
-
                     _headers.put("user-agent", BaseController.userAgent);
 
 
                     //prepare and invoke the API call request to fetch the response
-                    _request = getClientInstance().get(_queryUrl, _headers, null,
-                            Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+                    _request = getClientInstance().get(_queryUrl, _headers, null);
 
                     //invoke the callback before request if its not null
                     if (getHttpCallBack() != null) {

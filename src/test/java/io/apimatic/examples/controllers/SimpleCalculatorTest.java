@@ -48,21 +48,21 @@ public class SimpleCalculatorTest extends ControllerTestBase {
     }
 
     /**
-     * Check if multiplication works
+     * Todo Add description for test testSum
      * @throws Throwable
      */
     @Test
-    public void testMultiply() throws Throwable {
+    public void testSum() throws Throwable {
         // Parameters for the API call
-        OperationType operation = OperationType.fromString("MULTIPLY");
-        double x = 4d;
-        double y = 5d;
+        OperationType operation = OperationType.fromString("SUM");
+        double x = 5d;
+        double y = 20d;
 
         // Set callback and perform API call
         double result = 0;
         controller.setHttpCallBack(httpResponse);
         try {
-            result = controller.newEndpointItIs(operation, x, y);
+            result = controller.calculate(operation, x, y);
         } catch(APIException e) {};
 
        // Test whether the response is null
@@ -77,7 +77,73 @@ public class SimpleCalculatorTest extends ControllerTestBase {
                 result);
  
         assertEquals("Response does not match expected value", 
-            20, result, ASSERT_PRECISION);
+            25, result, ASSERT_PRECISION);
+    }
+
+    /**
+     * Todo Add description for test testSubtract
+     * @throws Throwable
+     */
+    @Test
+    public void testSubtract() throws Throwable {
+        // Parameters for the API call
+        OperationType operation = OperationType.fromString("SUBTRACT");
+        double x = 20d;
+        double y = 5d;
+
+        // Set callback and perform API call
+        double result = 0;
+        controller.setHttpCallBack(httpResponse);
+        try {
+            result = controller.calculate(operation, x, y);
+        } catch(APIException e) {};
+
+       // Test whether the response is null
+        assertNotNull("Response is null", 
+                httpResponse.getResponse());
+        // Test response code
+        assertEquals("Status is not 200", 
+                200, httpResponse.getResponse().getStatusCode());
+
+        // Test whether the captured response is as we expected
+        assertNotNull("Result does not exist", 
+                result);
+ 
+        assertEquals("Response does not match expected value", 
+            15, result, ASSERT_PRECISION);
+    }
+
+    /**
+     * Todo Add description for test testDivide
+     * @throws Throwable
+     */
+    @Test
+    public void testDivide() throws Throwable {
+        // Parameters for the API call
+        OperationType operation = OperationType.fromString("DIVIDE");
+        double x = 20d;
+        double y = 4d;
+
+        // Set callback and perform API call
+        double result = 0;
+        controller.setHttpCallBack(httpResponse);
+        try {
+            result = controller.calculate(operation, x, y);
+        } catch(APIException e) {};
+
+       // Test whether the response is null
+        assertNotNull("Response is null", 
+                httpResponse.getResponse());
+        // Test response code
+        assertEquals("Status is not 200", 
+                200, httpResponse.getResponse().getStatusCode());
+
+        // Test whether the captured response is as we expected
+        assertNotNull("Result does not exist", 
+                result);
+ 
+        assertEquals("Response does not match expected value", 
+            5, result, ASSERT_PRECISION);
     }
 
 }
